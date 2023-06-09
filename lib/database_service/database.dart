@@ -1,4 +1,5 @@
 
+import 'package:get_storage/get_storage.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -63,7 +64,7 @@ class DatabaseService {
   Future<int> updateUser(UserModel user) async {
     final db = await instance.database;
     var res = await db.update(Table_User, user.toMap(),
-        where: '$C_Email = ?', whereArgs: [user.email]);
+        where: '$C_Email = ?', whereArgs: [GetStorage().read('email')]);
     return res;
   }
 
