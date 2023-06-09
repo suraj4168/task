@@ -28,9 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
           _getStorage.read("token") == '') {
         Get.offAllNamed(Routes.login);
       } else {
-/*
-        Navigator.pushReplacementNamed(context, TabsScreen.id);
-*/
+        Get.offAllNamed(Routes.home);
+
       }
     });
   }
