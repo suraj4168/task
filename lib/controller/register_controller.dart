@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:task/database_service/database.dart';
 import '../model/user_model.dart';
 import '../routes/app_route.dart';
+import '../widgets/utility.dart';
 
 class RegisterScreenController extends GetxController {
   final formKeyRegister = GlobalKey<FormState>();
@@ -25,7 +26,7 @@ class RegisterScreenController extends GetxController {
         GetStorage().write("password", passwordTextController.value.text);
         Get.offAllNamed(Routes.home);
       }).catchError((error) {
-        print(error);
+        Utility.showToast(message: "Something went wrong!");
       });
     }
   }
