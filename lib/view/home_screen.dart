@@ -11,10 +11,9 @@ import '../widgets/utility.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  final homeController = Get.put(HomeScreenController());
-
   @override
   Widget build(BuildContext context) {
+    final homeController = Get.put(HomeScreenController());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
